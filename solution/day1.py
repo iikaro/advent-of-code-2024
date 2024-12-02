@@ -3,7 +3,7 @@ from functools import reduce
 from input.manager import get_input
 from solution.utils import print_solution
 
-TEST_INPUT = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3\n"
+_TEST_INPUT = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3\n"
 
 
 def parse_input(data: list[str], delimiter: str = 3 * " ") -> list[list[int]]:
@@ -24,7 +24,7 @@ def compute_similarity(data: list[list[int]]) -> int:
 
 if __name__ == "__main__":
     # Test
-    test_input_parsed = parse_input(TEST_INPUT.splitlines())
+    test_input_parsed = parse_input(_TEST_INPUT.splitlines())
     test_input_sorted = sort_columns(test_input_parsed)
     distance = compute_distance(test_input_sorted)
     assert distance == 11
