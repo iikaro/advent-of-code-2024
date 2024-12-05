@@ -2,7 +2,7 @@ import copy
 
 import numpy as np
 
-from input.manager import get_input
+from input.manager import get_input_lines
 from solution.utils import print_solution
 
 _TEST_INPUT_1: str = "MMMSXXMASM\nMSAMXMSMSA\nAMXSXMAAMM\nMSAMASMSMX\nXMASAMXAMM\nXXAMMXXAMA\nSMSMSASXSS\nSAXAMASAAA\nMAMMMXMMMM\nMXMXAXMASX"
@@ -98,14 +98,14 @@ def test_part_1():
 
 
 def solve_part_1():
-    data: str = "\n".join(get_input(day=4))
+    data: str = "\n".join(get_input_lines(day=4))
     count: int = count_instances(data)
     print_solution(count)
     assert count == 2406
 
 
 def solve_part_2():
-    count: int = count_xmas_patterns("\n".join(get_input(day=4)))
+    count: int = count_xmas_patterns("\n".join(get_input_lines(day=4)))
     print_solution(count)
     assert count == 1807
 

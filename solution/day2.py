@@ -1,6 +1,6 @@
 import copy
 
-from input.manager import get_input
+from input.manager import get_input_lines
 from solution.utils import print_solution
 
 _TEST_INPUT = "7 6 4 2 1\n1 2 7 8 9\n9 7 6 2 1\n1 3 2 4 5\n8 6 4 4 1\n1 3 6 7 9"
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     assert test_total_safe_levels == 2
 
     # Part 1
-    total_safe_levels = sum([check_level_is_safe(report) for report in parse_input(get_input(day=2))])
+    total_safe_levels = sum([check_level_is_safe(report) for report in parse_input(get_input_lines(day=2))])
     print_solution(total_safe_levels)
     assert total_safe_levels == 663
 
@@ -68,6 +68,7 @@ if __name__ == "__main__":
     assert test_total_safe_levels == 4
 
     # Part 2
-    total_safe_levels = sum([check_level_is_safe_with_tolerance(report) for report in parse_input(get_input(day=2))])
+    total_safe_levels = sum([check_level_is_safe_with_tolerance(report) for report in parse_input(
+        get_input_lines(day=2))])
     print_solution(total_safe_levels)
     assert total_safe_levels == 692

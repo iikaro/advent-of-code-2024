@@ -1,7 +1,7 @@
 import re
 from functools import reduce
 
-from input.manager import get_input
+from input.manager import get_input_lines
 from solution.utils import print_solution
 
 _TEST_INPUT = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     assert solution == 161
 
     # Part 1
-    data = "".join(get_input(day=3))
+    data = "".join(get_input_lines(day=3))
     solution = reduce(lambda x, f: f(x), [find_matches, parse_to_int, multiply_and_sum], data)
     print_solution(solution)
     assert solution == 184576302

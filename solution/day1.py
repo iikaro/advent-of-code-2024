@@ -1,6 +1,6 @@
 from functools import reduce
 
-from input.manager import get_input
+from input.manager import get_input_lines
 from solution.utils import print_solution
 
 _TEST_INPUT = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3\n"
@@ -30,11 +30,12 @@ if __name__ == "__main__":
     assert distance == 11
 
     # Part 1
-    distance = reduce(lambda x, f: f(x), [parse_input, sort_columns, compute_distance], get_input(day=1))
+    distance = reduce(lambda x, f: f(x), [parse_input, sort_columns, compute_distance], get_input_lines(day=1))
     print_solution(distance)
     assert distance == 2164381
 
     # Part 2
-    similarity_score = reduce(lambda x, f: f(x), [parse_input, sort_columns, compute_similarity], get_input(day=1))
+    similarity_score = reduce(lambda x, f: f(x), [parse_input, sort_columns, compute_similarity],
+                              get_input_lines(day=1))
     print_solution(similarity_score)
     assert similarity_score == 20719933
